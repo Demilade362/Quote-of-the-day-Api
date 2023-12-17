@@ -28,7 +28,8 @@
                         <a class="nav-link" href="/docs">Documentation</a>
                     </li>
                     <div class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-stars"></i> Star on Github</a>
+                        <a class="nav-link" href="https://github.com/Demilade362/Quote-of-the-day-Api"><i
+                                class="bi bi-stars"></i> Star on Github</a>
                     </div>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -52,8 +53,8 @@
                 <h4 class="display-4">
                     Quote Of the Day <br> Api Documentation
                 </h4>
-                <button type="button" class="btn btn-dark rounded-pill p-3 px-5 btn-lg mt-5"><span>Get
-                        Started</span></button>
+                <a href="/docs" type="button" class="btn btn-dark rounded-pill p-3 px-5 btn-lg mt-5"><span>Get
+                        Started</span></a>
             </div>
             <div class="col-6 text-center">
                 <h5>
@@ -103,7 +104,8 @@
                 <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis neque iusto
                     distinctio inventore eveniet velit nulla et, ducimus laborum aspernatur natus voluptate dolor nobis
                     minima nisi. Tenetur voluptate similique voluptatibus.</p>
-                <span>Link to <a href="#" class="text-decoration-none"> <i class="bi bi-github"></i>
+                <span>Link to <a href="https://github.com/Demilade362" class="text-decoration-none"> <i
+                            class="bi bi-github"></i>
                         Github</a></span>
             </div>
         </div>
