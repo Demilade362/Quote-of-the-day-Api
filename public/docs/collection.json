@@ -1,0 +1,212 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/127.0.0.1:8000\/"
+        }
+    ],
+    "info": {
+        "name": "Quote of the day Documentation",
+        "_postman_id": "4b7dace4-d9f7-4c01-8995-e39aee64e252",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get Random Quotes",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quote",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quote"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This Route Get a Random Quote from the Api and will return a status code of 200 if the quote is found\n\nOtherwise, the request will fail with a 404 error,and not quotes is found",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"quote\":\"Nam inventore est voluptates quia commodi voluptas et.\",\"author\":\"Prof. Alberta Weissnat DDS\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Quotes Based On an ID",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quotes\/:quotes_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quotes\/:quotes_id",
+                            "variable": [
+                                {
+                                    "id": "quotes_id",
+                                    "key": "quotes_id",
+                                    "value": "1",
+                                    "description": "The ID of the quotes."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This Route Get a Quote from the Api based on the ID given and will return a status code of 200 if the quote is found\n\nOtherwise, the request will fail with a 404 error, because no quote with that ID is found",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"quote\":\"Omnis ab facilis laborum deleniti illum et illo minima optio corrupti maxime minima repellendus.\",\"author\":\"Baby Farrell DVM\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Search Quotes with Author Names",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/quotes\/search\/:quotes_author",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/quotes\/search\/:quotes_author",
+                            "variable": [
+                                {
+                                    "id": "quotes_author",
+                                    "key": "quotes_author",
+                                    "value": "maiores",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This Route Search for a Quote from the Api using author names this will return a status code of 200 if the quote with the author name is found\n\nOtherwise, the request will fail with a 404 error,and not quotes is found",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "54"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[]}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

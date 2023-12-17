@@ -1,0 +1,113 @@
+openapi: 3.0.3
+info:
+  title: 'Quote of the day Documentation'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /api/quote:
+    get:
+      summary: 'Get Random Quotes'
+      operationId: getRandomQuotes
+      description: "This Route Get a Random Quote from the Api and will return a status code of 200 if the quote is found\n\nOtherwise, the request will fail with a 404 error,and not quotes is found"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    quote: 'Nam inventore est voluptates quia commodi voluptas et.'
+                    author: 'Prof. Alberta Weissnat DDS'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      quote:
+                        type: string
+                        example: 'Nam inventore est voluptates quia commodi voluptas et.'
+                      author:
+                        type: string
+                        example: 'Prof. Alberta Weissnat DDS'
+      tags:
+        - Endpoints
+      security: []
+  '/api/quotes/{quotes_id}':
+    get:
+      summary: 'Get Quotes Based On an ID'
+      operationId: getQuotesBasedOnAnID
+      description: "This Route Get a Quote from the Api based on the ID given and will return a status code of 200 if the quote is found\n\nOtherwise, the request will fail with a 404 error, because no quote with that ID is found"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    quote: 'Omnis ab facilis laborum deleniti illum et illo minima optio corrupti maxime minima repellendus.'
+                    author: 'Baby Farrell DVM'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      quote:
+                        type: string
+                        example: 'Omnis ab facilis laborum deleniti illum et illo minima optio corrupti maxime minima repellendus.'
+                      author:
+                        type: string
+                        example: 'Baby Farrell DVM'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: quotes_id
+        description: 'The ID of the quotes.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/quotes/search/{quotes_author}':
+    get:
+      summary: 'Search Quotes with Author Names'
+      operationId: searchQuotesWithAuthorNames
+      description: "This Route Search for a Quote from the Api using author names this will return a status code of 200 if the quote with the author name is found\n\nOtherwise, the request will fail with a 404 error,and not quotes is found"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: []
+                properties:
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: quotes_author
+        description: ''
+        example: maiores
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: Endpoints
+    description: ''
