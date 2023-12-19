@@ -73,7 +73,7 @@
             <!-- Button to trigger fetching data -->
             <div class="d-flex">
                 <button id="fetchButton" class="btn btn-dark me-2">Fetch New Quote</button>
-                <a href="#" class="btn btn-light shadow-sm border-dark border-1">Check Out Documentation</a>
+                <a href="/docs" class="btn btn-light shadow-sm border-dark border-1">Check Out Documentation</a>
             </div>
 
             <div class="row align-items-center justify-content-between  mt-5">
