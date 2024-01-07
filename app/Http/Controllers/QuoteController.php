@@ -6,6 +6,7 @@ use App\Http\Resources\QuoteResource;
 use App\Models\Quotes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class QuoteController extends Controller
 {

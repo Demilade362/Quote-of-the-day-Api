@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <title>{{ config('app.name') }}</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-            <a class="navbar-brand" href="#">{{ _('Quote Of the Day') }}</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/docs">Documentation</a>
-                    </li>
-                    <div class="nav-item">
-                        <a class="nav-link" href="https://github.com/Demilade362/Quote-of-the-day-Api"><i
-                                class="bi bi-stars"></i> Star on Github</a>
-                    </div>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Version
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/">v0.1</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <a href="/docs" class="btn btn-dark rounded-pill px-4 py-2">Get Started</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+@section('content')
     <div class="container">
         <div class="row align-items-center" style="margin: 10rem 0 0 0">
             <div class="col-6">
@@ -110,55 +64,4 @@
             </div>
         </div>
     </div>
-    <!-- Remove the container if you want to extend the Footer to full width. -->
-    <div class="mt-5" style="margin-top: 10rem;">
-
-        <footer class="text-center text-lg-start">
-            <div class="container d-flex justify-content-center py-5">
-                <button type="button" class="btn btn-primary btn-lg btn-floating mx-2">
-                    <i class="bi bi-facebook"></i>
-                </button>
-                <button type="button" class="btn btn-danger btn-lg btn-floating mx-2">
-                    <i class="bi bi-youtube"></i>
-                </button>
-                <button type="button" class="btn bg-danger-subtle btn-lg btn-floating mx-2">
-                    <i class="bi bi-instagram"></i>
-                </button>
-                <button type="button" class="btn btn-dark btn-lg btn-floating mx-2">
-                    <i class="bi bi-twitter-x"></i>
-                </button>
-            </div>
-
-            <!-- Copyright -->
-            <div class="text-center text-light bg-dark p-3">
-                © 2023 Copyright: Quote of the Day Api
-            </div>
-            <!-- Copyright -->
-        </footer>
-
-    </div>
-    <!-- End of .container -->
-
-    <script>
-        fetch('http://127.0.0.1:8000/api/quote')
-            .then(response => response.json())
-            .then(data => {
-                const jsonDataCard = document.getElementById('jsonDataCard');
-                const jsonDataContent = document.getElementById('jsonDataContent');
-                jsonDataContent.textContent = JSON.stringify(data, null, 2);
-            })
-            .catch(error => console.error('Error fetching data:', error));
-        document.getElementById('fetchButton').addEventListener('click', function() {
-            fetch('http://127.0.0.1:8000/api/quote')
-                .then(response => response.json())
-                .then(data => {
-                    const jsonDataCard = document.getElementById('jsonDataCard');
-                    const jsonDataContent = document.getElementById('jsonDataContent');
-                    jsonDataContent.textContent = JSON.stringify(data, null, 2);
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        });
-    </script>
-</body>
-
-</html>
+@endsection

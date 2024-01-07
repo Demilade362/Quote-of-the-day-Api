@@ -1,5 +1,8 @@
 <?php
 
+use App\Jobs\FunJob;
+use Illuminate\Support\Facades\Broadcast;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // dispatch(new FunJob([
+    //     'quote' => 'This is to test Whether the queues work',
+    //     'author' => 'Demilade Abatan'
+    // ]));
     return view('welcome');
 });
 
-Auth::routes();
+
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

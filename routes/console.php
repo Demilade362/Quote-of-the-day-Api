@@ -19,22 +19,11 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Artisan::command('create:quote ', function () {
-    $authors = [];
-    $quotes = $this->withProgressBar(Quotes::all(), function (Quotes $quote) {
-        $authors[] = $quote->author;
-    });
+Artisan::command('display', function () {
+    $this->info('Too Display Something');
+})->purpose('Too Display A Text');
 
-    $this->table(
-        ['Quote', 'Author'],
-        Quotes::all(['quote', 'author'])->toArray()
-    );
-    $name = $this->choice(
-        'What is your name?',
-        ['Taylor', 'Dayle'],
-        0,
-        $maxAttempt = 2
-    );
+Artisan::command('create:quote ', function () {
     $quote = $this->ask('Write you Quote');
     $author = $this->ask('Your author name please');
 
