@@ -23,6 +23,8 @@
         /* starts out as display none and is replaced with js later  */
                     body .content .bash-example code { display: none; }
                     body .content .javascript-example code { display: none; }
+                    body .content .php-example code { display: none; }
+                    body .content .python-example code { display: none; }
             </style>
 
     <script>
@@ -30,13 +32,13 @@
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="../docs/js/tryitout-4.26.0.js"></script>
+    <script src="../docs/js/tryitout-4.29.0.js"></script>
 
-    <script src="../docs/js/theme-default-4.26.0.js"></script>
+    <script src="../docs/js/theme-default-4.29.0.js"></script>
 
 </head>
 
-<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;,&quot;python&quot;]">
 
 <a href="#" id="nav-button">
     <span>
@@ -49,6 +51,8 @@
             <div class="lang-selector">
                                             <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                             <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
+                                            <button type="button" class="lang-button" data-language-name="python">python</button>
                     </div>
     
     <div class="search">
@@ -91,7 +95,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 12, 2023</li>
+        <li>Last updated: January 8, 2024</li>
     </ul>
 </div>
 
@@ -147,6 +151,36 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/quote';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/quote'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-quote">
@@ -160,14 +194,21 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;quote&quot;: &quot;Nam inventore est voluptates quia commodi voluptas et.&quot;,
-        &quot;author&quot;: &quot;Prof. Alberta Weissnat DDS&quot;
+        &quot;quote&quot;: &quot;Voluptatibus quibusdam sint non accusantium voluptate corporis numquam qui tempore ullam harum.&quot;,
+        &quot;author&quot;: {
+            &quot;name&quot;: &quot;Ona Durgan Sr.&quot;,
+            &quot;picture&quot;: {
+                &quot;large&quot;: &quot;https://randomuser.me/api/portraits/men/75.jpg&quot;,
+                &quot;medium&quot;: &quot;https://randomuser.me/api/portraits/med/men/75.jpg&quot;,
+                &quot;thumbnail&quot;: &quot;https://randomuser.me/api/portraits/thumb/men/75.jpg&quot;
+            }
+        }
     }
 }</code>
  </pre>
@@ -286,6 +327,36 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/quotes/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/quotes/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
 </span>
 
 <span id="example-responses-GETapi-quotes--quotes_id-">
@@ -299,14 +370,21 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
         &quot;quote&quot;: &quot;Omnis ab facilis laborum deleniti illum et illo minima optio corrupti maxime minima repellendus.&quot;,
-        &quot;author&quot;: &quot;Baby Farrell DVM&quot;
+        &quot;author&quot;: {
+            &quot;name&quot;: &quot;Baby Farrell DVM&quot;,
+            &quot;picture&quot;: {
+                &quot;large&quot;: &quot;https://randomuser.me/api/portraits/men/91.jpg&quot;,
+                &quot;medium&quot;: &quot;https://randomuser.me/api/portraits/med/men/91.jpg&quot;,
+                &quot;thumbnail&quot;: &quot;https://randomuser.me/api/portraits/thumb/men/91.jpg&quot;
+            }
+        }
     }
 }</code>
  </pre>
@@ -417,14 +495,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/quotes/search/maiores" \
+    --get "http://127.0.0.1:8000/api/quotes/search/Demilade" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/quotes/search/maiores"
+    "http://127.0.0.1:8000/api/quotes/search/Demilade"
 );
 
 const headers = {
@@ -436,6 +514,36 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/quotes/search/Demilade';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/quotes/search/Demilade'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
 
 </span>
 
@@ -450,12 +558,35 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: []
+    &quot;data&quot;: [
+        {
+            &quot;quote&quot;: &quot;How i became a man today by coding&quot;,
+            &quot;author&quot;: {
+                &quot;name&quot;: &quot;Oluwademilade Abatan&quot;,
+                &quot;picture&quot;: {
+                    &quot;large&quot;: &quot;https://randomuser.me/api/portraits/men/78.jpg&quot;,
+                    &quot;medium&quot;: &quot;https://randomuser.me/api/portraits/med/men/78.jpg&quot;,
+                    &quot;thumbnail&quot;: &quot;https://randomuser.me/api/portraits/thumb/men/78.jpg&quot;
+                }
+            }
+        },
+        {
+            &quot;quote&quot;: &quot;This is to test Whether the queues work&quot;,
+            &quot;author&quot;: {
+                &quot;name&quot;: &quot;Demilade Abatan&quot;,
+                &quot;picture&quot;: {
+                    &quot;large&quot;: &quot;https://randomuser.me/api/portraits/women/79.jpg&quot;,
+                    &quot;medium&quot;: &quot;https://randomuser.me/api/portraits/med/women/79.jpg&quot;,
+                    &quot;thumbnail&quot;: &quot;https://randomuser.me/api/portraits/thumb/women/79.jpg&quot;
+                }
+            }
+        }
+    ]
 }</code>
  </pre>
     </span>
@@ -532,13 +663,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>quotes_author</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="quotes_author"                data-endpoint="GETapi-quotes-search--quotes_author-"
-               value="maiores"
+               value="Demilade"
                data-component="url">
     <br>
-<p>Example: <code>maiores</code></p>
+<p>The Author Name Example: <code>Demilade</code></p>
             </div>
                     </form>
 
@@ -559,6 +690,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <div class="lang-selector">
                                                         <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                                         <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
+                                                        <button type="button" class="lang-button" data-language-name="python">python</button>
                             </div>
             </div>
 </div>

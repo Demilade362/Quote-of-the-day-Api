@@ -22,18 +22,38 @@ paths:
                 type: object
                 example:
                   data:
-                    quote: 'Nam inventore est voluptates quia commodi voluptas et.'
-                    author: 'Prof. Alberta Weissnat DDS'
+                    quote: 'Voluptatibus quibusdam sint non accusantium voluptate corporis numquam qui tempore ullam harum.'
+                    author:
+                      name: 'Ona Durgan Sr.'
+                      picture:
+                        large: 'https://randomuser.me/api/portraits/men/75.jpg'
+                        medium: 'https://randomuser.me/api/portraits/med/men/75.jpg'
+                        thumbnail: 'https://randomuser.me/api/portraits/thumb/men/75.jpg'
                 properties:
                   data:
                     type: object
                     properties:
                       quote:
                         type: string
-                        example: 'Nam inventore est voluptates quia commodi voluptas et.'
+                        example: 'Voluptatibus quibusdam sint non accusantium voluptate corporis numquam qui tempore ullam harum.'
                       author:
-                        type: string
-                        example: 'Prof. Alberta Weissnat DDS'
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: 'Ona Durgan Sr.'
+                          picture:
+                            type: object
+                            properties:
+                              large:
+                                type: string
+                                example: 'https://randomuser.me/api/portraits/men/75.jpg'
+                              medium:
+                                type: string
+                                example: 'https://randomuser.me/api/portraits/med/men/75.jpg'
+                              thumbnail:
+                                type: string
+                                example: 'https://randomuser.me/api/portraits/thumb/men/75.jpg'
       tags:
         - Endpoints
       security: []
@@ -53,7 +73,12 @@ paths:
                 example:
                   data:
                     quote: 'Omnis ab facilis laborum deleniti illum et illo minima optio corrupti maxime minima repellendus.'
-                    author: 'Baby Farrell DVM'
+                    author:
+                      name: 'Baby Farrell DVM'
+                      picture:
+                        large: 'https://randomuser.me/api/portraits/men/91.jpg'
+                        medium: 'https://randomuser.me/api/portraits/med/men/91.jpg'
+                        thumbnail: 'https://randomuser.me/api/portraits/thumb/men/91.jpg'
                 properties:
                   data:
                     type: object
@@ -62,8 +87,23 @@ paths:
                         type: string
                         example: 'Omnis ab facilis laborum deleniti illum et illo minima optio corrupti maxime minima repellendus.'
                       author:
-                        type: string
-                        example: 'Baby Farrell DVM'
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: 'Baby Farrell DVM'
+                          picture:
+                            type: object
+                            properties:
+                              large:
+                                type: string
+                                example: 'https://randomuser.me/api/portraits/men/91.jpg'
+                              medium:
+                                type: string
+                                example: 'https://randomuser.me/api/portraits/med/men/91.jpg'
+                              thumbnail:
+                                type: string
+                                example: 'https://randomuser.me/api/portraits/thumb/men/91.jpg'
       tags:
         - Endpoints
       security: []
@@ -90,11 +130,67 @@ paths:
               schema:
                 type: object
                 example:
-                  data: []
+                  data:
+                    -
+                      quote: 'How i became a man today by coding'
+                      author:
+                        name: 'Oluwademilade Abatan'
+                        picture:
+                          large: 'https://randomuser.me/api/portraits/men/78.jpg'
+                          medium: 'https://randomuser.me/api/portraits/med/men/78.jpg'
+                          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/78.jpg'
+                    -
+                      quote: 'This is to test Whether the queues work'
+                      author:
+                        name: 'Demilade Abatan'
+                        picture:
+                          large: 'https://randomuser.me/api/portraits/women/79.jpg'
+                          medium: 'https://randomuser.me/api/portraits/med/women/79.jpg'
+                          thumbnail: 'https://randomuser.me/api/portraits/thumb/women/79.jpg'
                 properties:
                   data:
                     type: array
-                    example: []
+                    example:
+                      -
+                        quote: 'How i became a man today by coding'
+                        author:
+                          name: 'Oluwademilade Abatan'
+                          picture:
+                            large: 'https://randomuser.me/api/portraits/men/78.jpg'
+                            medium: 'https://randomuser.me/api/portraits/med/men/78.jpg'
+                            thumbnail: 'https://randomuser.me/api/portraits/thumb/men/78.jpg'
+                      -
+                        quote: 'This is to test Whether the queues work'
+                        author:
+                          name: 'Demilade Abatan'
+                          picture:
+                            large: 'https://randomuser.me/api/portraits/women/79.jpg'
+                            medium: 'https://randomuser.me/api/portraits/med/women/79.jpg'
+                            thumbnail: 'https://randomuser.me/api/portraits/thumb/women/79.jpg'
+                    items:
+                      type: object
+                      properties:
+                        quote:
+                          type: string
+                          example: 'How i became a man today by coding'
+                        author:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: 'Oluwademilade Abatan'
+                            picture:
+                              type: object
+                              properties:
+                                large:
+                                  type: string
+                                  example: 'https://randomuser.me/api/portraits/men/78.jpg'
+                                medium:
+                                  type: string
+                                  example: 'https://randomuser.me/api/portraits/med/men/78.jpg'
+                                thumbnail:
+                                  type: string
+                                  example: 'https://randomuser.me/api/portraits/thumb/men/78.jpg'
       tags:
         - Endpoints
       security: []
@@ -102,11 +198,17 @@ paths:
       -
         in: path
         name: quotes_author
-        description: ''
-        example: maiores
+        description: 'Optional parameter. The Author Name'
         required: true
         schema:
           type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: Demilade
 tags:
   -
     name: Endpoints

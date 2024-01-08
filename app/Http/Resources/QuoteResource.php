@@ -25,8 +25,10 @@ class QuoteResource extends JsonResource
     {
         return [
             "quote" =>  $this->quote,
-            "author" => $this->author,
-            "authorPhoto" => $this->getPhoto('https://randomuser.me/api/')
+            "author" => [
+                "name" => $this->author,
+                "picture" => $this->getPhoto('https://randomuser.me/api/')
+            ],
         ];
     }
 }

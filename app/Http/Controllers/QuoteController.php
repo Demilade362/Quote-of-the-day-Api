@@ -49,6 +49,7 @@ class QuoteController extends Controller
      *
      * Otherwise, the request will fail with a 404 error,and not quotes is found
      *
+     * @urlParam quotes_author The Author Name Example: Demilade
      * @responseField Returns Get you a quote from the api based on the search input.
      */
     public function search(string $author)

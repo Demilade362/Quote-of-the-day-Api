@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Quote of the day Documentation",
-        "_postman_id": "4b7dace4-d9f7-4c01-8995-e39aee64e252",
+        "_postman_id": "088f4be5-4c1e-4460-aae9-7260a627dc18",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -62,7 +62,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "56"
+                                    "value": "59"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -70,7 +70,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":{\"quote\":\"Nam inventore est voluptates quia commodi voluptas et.\",\"author\":\"Prof. Alberta Weissnat DDS\"}}",
+                            "body": "{\"data\":{\"quote\":\"Voluptatibus quibusdam sint non accusantium voluptate corporis numquam qui tempore ullam harum.\",\"author\":{\"name\":\"Ona Durgan Sr.\",\"picture\":{\"large\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/men\\\/75.jpg\",\"medium\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/med\\\/men\\\/75.jpg\",\"thumbnail\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/thumb\\\/men\\\/75.jpg\"}}}}",
                             "name": ""
                         }
                     ]
@@ -126,7 +126,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "55"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -134,7 +134,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":{\"quote\":\"Omnis ab facilis laborum deleniti illum et illo minima optio corrupti maxime minima repellendus.\",\"author\":\"Baby Farrell DVM\"}}",
+                            "body": "{\"data\":{\"quote\":\"Omnis ab facilis laborum deleniti illum et illo minima optio corrupti maxime minima repellendus.\",\"author\":{\"name\":\"Baby Farrell DVM\",\"picture\":{\"large\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/men\\\/91.jpg\",\"medium\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/med\\\/men\\\/91.jpg\",\"thumbnail\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/thumb\\\/men\\\/91.jpg\"}}}}",
                             "name": ""
                         }
                     ]
@@ -151,8 +151,8 @@
                                 {
                                     "id": "quotes_author",
                                     "key": "quotes_author",
-                                    "value": "maiores",
-                                    "description": ""
+                                    "value": "Demilade",
+                                    "description": "The Author Name"
                                 }
                             ]
                         },
@@ -190,7 +190,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "54"
+                                    "value": "57"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -198,7 +198,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[]}",
+                            "body": "{\"data\":[{\"quote\":\"How i became a man today by coding\",\"author\":{\"name\":\"Oluwademilade Abatan\",\"picture\":{\"large\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/men\\\/78.jpg\",\"medium\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/med\\\/men\\\/78.jpg\",\"thumbnail\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/thumb\\\/men\\\/78.jpg\"}}},{\"quote\":\"This is to test Whether the queues work\",\"author\":{\"name\":\"Demilade Abatan\",\"picture\":{\"large\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/women\\\/79.jpg\",\"medium\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/med\\\/women\\\/79.jpg\",\"thumbnail\":\"https:\\\/\\\/randomuser.me\\\/api\\\/portraits\\\/thumb\\\/women\\\/79.jpg\"}}}]}",
                             "name": ""
                         }
                     ]
